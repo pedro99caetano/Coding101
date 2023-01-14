@@ -1,0 +1,225 @@
+using System;
+using System.Collections;
+using static System.Net.Mime.MediaTypeNames;
+
+
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("Please select one of the applications below");
+        Console.WriteLine(" ");
+        Console.WriteLine("1. Insert four variables. The highest variable will be presented");
+        Console.WriteLine("2. Insert two variables. The variables will be divided and the highest result will be presented");
+        Console.WriteLine("3. Insert four variables. Three variables will be summed and the divided by the fourth variable. The lowest result will be presented");
+        Console.WriteLine("4. Insert two variables. The two variables will be divided and the result will be presented with two decimal places");
+        Console.WriteLine("5. Insert two variables. The variables will be multiplied. If the result is even, the word Bizz will be presented. If the result is odd, the word Buzz will be presented ");
+        Console.WriteLine("6. Insert two variables. The two variables will be calculated with one of the operations you choose.");
+
+        Console.WriteLine(" ");
+        Console.Write("Selection: ");
+        int choice = int.Parse(Console.ReadLine());
+
+
+
+        switch (choice)
+        {
+            case 1:
+                Console.WriteLine("Insert four variables");
+                Console.Write("First Variable: ");
+                int oneVar = int.Parse(Console.ReadLine());
+                Console.Write("Second Variable: ");
+                int twoVar = int.Parse(Console.ReadLine());
+                Console.Write("Third Variable: ");
+                int threeVar = int.Parse(Console.ReadLine());
+                Console.Write("Fourth Variable: ");
+                int fourVar = int.Parse(Console.ReadLine());
+                int maxNumber = 0;
+
+                if (oneVar > twoVar)
+                    maxNumber = oneVar;
+
+                else
+                    maxNumber = twoVar;
+
+                if (threeVar > maxNumber)
+                    maxNumber = threeVar;
+
+                if (fourVar > maxNumber)
+                    maxNumber = fourVar;
+
+                Console.WriteLine("The Largest variable is " + maxNumber);
+
+                break;
+
+            case 2:
+                Console.WriteLine("Insert two variables");
+                Console.Write("First Variable: ");
+                int fiveVar = int.Parse(Console.ReadLine());
+                Console.Write("Second Variable: ");
+                int sixVar = int.Parse(Console.ReadLine());
+
+                int divOne = fiveVar / sixVar;
+                int divTwo = sixVar / fiveVar;
+
+
+
+                int highDiv = 0;
+                if (divOne > divTwo)
+                    highDiv = divOne;
+
+                else
+                    highDiv = divTwo;
+
+
+
+                Console.WriteLine("The Largest variable is " + highDiv);
+
+                break;
+
+            case 3:
+
+                Console.WriteLine("insert four variables");
+                Console.Write("first variable: ");
+                float sevenVar = float.Parse(Console.ReadLine());
+                Console.Write("second variable: ");
+                float eightVar = float.Parse(Console.ReadLine());
+                Console.Write("third variable: ");
+                float nineVar = float.Parse(Console.ReadLine());
+                Console.Write("fourth variable: ");
+                float tenvar = float.Parse(Console.ReadLine());
+                float minNumber = 0;
+
+                float firstSum = (eightVar + nineVar + tenvar) / sevenVar;
+                float secondSum = (sevenVar + nineVar + tenvar) / eightVar;
+                float thirdSum = (eightVar + sevenVar + tenvar) / nineVar;
+                float fourthSum = (eightVar + nineVar + sevenVar) / tenvar;
+
+                Console.WriteLine("First Division is equal to " + firstSum);
+                Console.WriteLine("First Division is equal to " + secondSum);
+                Console.WriteLine("First Division is equal to " + thirdSum);
+                Console.WriteLine("First Division is equal to " + fourthSum);
+
+                if (firstSum < secondSum)
+                    minNumber = firstSum;
+
+                else
+                    minNumber = secondSum;
+
+                if (thirdSum < minNumber)
+                    minNumber = thirdSum;
+
+                if (fourthSum < minNumber)
+                    minNumber = fourthSum;
+
+                Console.WriteLine("The lowest result is " + minNumber);
+
+                break;
+
+            case 4:
+
+                Console.WriteLine("Insert two variables");
+                Console.Write("First Variable: ");
+                float elevenVar = int.Parse(Console.ReadLine());
+                Console.Write("Second Variable: ");
+                float twelveVar = int.Parse(Console.ReadLine());
+
+                float elevenDivision = elevenVar / twelveVar;
+                string formattedResult1 = elevenDivision.ToString("F2");
+                float twelveDivision = twelveVar / elevenVar;
+                string formattedResult2 = twelveDivision.ToString("F2");
+
+
+                Console.WriteLine("The first result is " + formattedResult1);
+                Console.WriteLine("The second result is " + formattedResult2);
+
+                break;
+
+            case 5:
+
+                Console.WriteLine("Insert two variables");
+                Console.Write("First variable: ");
+                float thirteenVar = float.Parse(Console.ReadLine());
+                Console.Write("Second variable: ");
+                float fourteenVar = float.Parse(Console.ReadLine());
+
+                float firstResult = fourteenVar * thirteenVar;
+
+                Console.Write("The result of your multiplication is " + firstResult);
+
+                if (firstResult % 2 == 0)
+                {
+                    Console.WriteLine(" (Bizz)");
+                }
+                else
+                {
+                    Console.WriteLine(" (Buzz)");
+
+
+                }
+
+                break;
+
+            case 6:
+
+                Console.WriteLine("Insert two variables");
+                Console.Write("first variable: ");
+                float fifteenVar = float.Parse(Console.ReadLine());
+                Console.Write("second variable: ");
+                float sixteenVar = float.Parse(Console.ReadLine());
+
+                Console.WriteLine(" ");
+                Console.WriteLine("Select an operation");
+                Console.WriteLine(" ");
+                Console.WriteLine("SUM");
+                Console.WriteLine("SUB");
+                Console.WriteLine("MLT");
+                Console.WriteLine("DIV");
+                Console.WriteLine(" ");
+                Console.Write("Selection: ");
+
+                string option = Console.ReadLine();
+
+                switch (option)
+
+                {
+                    case "sum":
+
+                        Console.WriteLine(fifteenVar + sixteenVar);
+
+                        break;
+
+                    case "sub":
+
+                        Console.WriteLine(fifteenVar - sixteenVar);
+
+                        break;
+
+                    case "mlt":
+
+                        Console.WriteLine(fifteenVar * sixteenVar);
+
+                        break;
+
+                    case "div":
+
+                        Console.WriteLine(fifteenVar / sixteenVar);
+
+                        break;
+
+                }
+
+                break;
+
+
+                    
+
+
+              
+
+
+
+
+        }
+    }
+}
